@@ -1,0 +1,23 @@
+.bordered {
+  border-width: thin;
+  border: solid;
+  border-color: black;
+  padding: 50px;
+}
+
+.main{
+  min-width: 100%;
+}
+
+.fullwidth {
+  min-width: 100%;
+}
+
+.halfwidth {
+  min-width: 50%;
+}
+
+.container-main {
+  width:600px;
+  min-height: 800px;
+}

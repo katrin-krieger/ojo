@@ -1,5 +1,7 @@
 const https = require('https');
 const querystring = require('querystring');
+const pug = require('pug');
+const fs = require('fs');
 
 const weather_api = 'api.openweathermap.org';
 
@@ -66,3 +68,19 @@ function performRequest(endpoint, method, data, success) {
 }
 
 getCurrentWeather();
+const compiledFunction = pug.compileFile('index.pug');
+console.log(compiledFunction({
+  title: 'ojo weather forecast',
+  todaystatus: '800'
+}));
+
+fs.writeFile("pug_test.html", compiledFunction({
+  title: 'ojo weather forecast',
+  todaystatus: '800'
+}), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+});
